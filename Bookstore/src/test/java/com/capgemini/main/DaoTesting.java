@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.capgemini.main.dao.CancleOrderDao;
+import com.capgemini.main.dao.UpdateQuantityDao;
 
 
 @RunWith(SpringRunner.class)
@@ -16,7 +16,7 @@ import com.capgemini.main.dao.CancleOrderDao;
 public class DaoTesting {
 	
 	@Autowired
-	CancleOrderDao cancleDao;
+	UpdateQuantityDao updateQuantityDao;
 	
 	/*
 	@Test

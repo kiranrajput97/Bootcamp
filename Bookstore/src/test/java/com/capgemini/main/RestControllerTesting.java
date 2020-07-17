@@ -13,8 +13,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.capgemini.main.controller.OrderInformationController;
-import com.capgemini.main.service.CancleOrderService;
+import com.capgemini.main.controller.UpdateQuantityController;
+import com.capgemini.main.service.UpdateQuantityService;
 
 public class RestControllerTesting extends BookstoreApplicationTests {
 
@@ -23,11 +23,11 @@ public class RestControllerTesting extends BookstoreApplicationTests {
 	private MockMvc mockMvc;
 	
 	@Mock
-	CancleOrderService service;
+	UpdateQuantityService service;
 
 	
 	@InjectMocks
-	private OrderInformationController controller;
+	private UpdateQuantityController controller;
 	
 	
 	

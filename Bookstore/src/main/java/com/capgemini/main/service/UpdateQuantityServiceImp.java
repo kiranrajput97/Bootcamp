@@ -2,17 +2,17 @@ package com.capgemini.main.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.capgemini.main.dao.CancleOrderDao;
+import com.capgemini.main.dao.UpdateQuantityDao;
 import com.capgemini.main.entities.OrderInformation;
 
 public class UpdateQuantityServiceImp implements UpdateQuantityService {
 	@Autowired
-	CancleOrderDao UpdateQuantityDao;
+	UpdateQuantityDao updateQuantityDao;
 	@Override
 	public boolean findOrderById(int orderId) {
 		// TODO Auto-generated method stub
 		
-		return UpdateQuantityDao.findOrder(orderId);
+		return updateQuantityDao.findOrder(orderId);
 		
 	}
 	
@@ -21,20 +21,20 @@ public class UpdateQuantityServiceImp implements UpdateQuantityService {
 		// TODO Auto-generated method stub
 		
 		OrderInformation orderDetails=new OrderInformation();
-			orderDetails=UpdateQuantityDao.getOrderDetails(orderId);
+			orderDetails=updateQuantityDao.getOrderDetails(orderId);
 			
 			if(orderDetails.getOrderStatus().equals("Processing"))
 			{
-				UpdateQuantityDao.updateOrderStatus(orderId, "Cancelled");
-				return "Order is Cancelled";
+				updateQuantityDao.updateOrderStatus(orderId, "processing");
+				return "Updating the quantity of the books";
 			}
 			else if(orderDetails.getOrderStatus().equals("Cancelled"))
 			{
-				return "Order is already Cancelled";
+				return "Book Order is already Cancelled, cannot update";
 			}
 			else if(orderDetails.getOrderStatus().equals("Shipped"))
 			{
-				return "Cannot Cancelled Order, Order is already Shipped";
+				return "Cannot update quantity of books, Order is already Shipped";
 			}
 			return null;
 		
