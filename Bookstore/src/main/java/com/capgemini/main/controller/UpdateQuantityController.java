@@ -34,18 +34,7 @@ public class UpdateQuantityController {
 			return new ResponseEntity<String>(result,HttpStatus.OK);
 		
 		
-	}
+	    }
 	
-
-
-
-
-
-
-
-
-
-
-
 
 }
