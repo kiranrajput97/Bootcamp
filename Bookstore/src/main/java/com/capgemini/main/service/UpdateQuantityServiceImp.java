@@ -17,7 +17,7 @@ public class UpdateQuantityServiceImp implements UpdateQuantityService {
 	}
 	
 	@Override
-	public String cancleOrder(int orderId) {
+	public String updateQuantity(int orderId) {
 		// TODO Auto-generated method stub
 		
 		OrderInformation orderDetails=new OrderInformation();
@@ -40,6 +40,7 @@ public class UpdateQuantityServiceImp implements UpdateQuantityService {
 		
 		 
 	}
+
 
 
 }
